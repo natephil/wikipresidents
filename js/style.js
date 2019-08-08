@@ -12,3 +12,7 @@ let observer = new IntersectionObserver(entries => {
 });
 observer.observe(document.querySelector("#top-of-site-pixel-anchor"));
 }
+
+('#top').click(function() { // when the button is clicked
+    $('body,html').animate({scrollTop:0},500); // return to the top with a nice animation
+});
