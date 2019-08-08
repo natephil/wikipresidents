@@ -5,7 +5,7 @@ if (
 ) {
 let observer = new IntersectionObserver(entries => {
   if (entries[0].boundingClientRect.y < 0) {
-    document.body.classList.add("header-not-at-top");
+    document.body.classList.add("fixed");
   } else {
     document.body.classList.remove("fixed");
   }
