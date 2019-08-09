@@ -4,13 +4,14 @@ div.fixed {
   right: 0;
   width: 300px; */
   border: 3px solid #73AD21;
+  display: none;
 }
 #navbar {
   background-color: #333;
   position: fixed;
   top: 0;
   width: 100%;
-  display: block;
+  display: inline-block;
   transition: top 0.3s;
 }
 
