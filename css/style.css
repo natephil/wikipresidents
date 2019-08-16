@@ -1,26 +1,72 @@
-div.fixed {
-  position: fixed;
-/*   bottom: 0;
-  right: 0;
-  width: 300px; */
-  border: 3px solid #73AD21;
-  display: none;
+body {
+  background-color: ghostwhite;
+  /*background-color: #f1f2f6;*/
+  margin: 3rem auto;
+  max-width: 70rem;
+  font: 10px sans-serif;
 }
-#navbar {
-  background-color: #333;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: inline-block;
-  transition: top 0.3s;
-}
-
-#navbar a {
-  float: left;
-  display: block;
-  color: #f2f2f2;
+h1 {
   text-align: center;
-  padding: 15px;
-  text-decoration: none;
-  font-size: 17px;
+  margin-bottom: 3rem;
 }
+section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5rem;
+}
+@media screen and (min-width: 35rem) {
+  section {
+    flex-direction: row;
+  }
+}
+section > * {
+  flex: 1;
+}
+  .axis path,
+  .axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+  }
+  .bar {
+    fill: #686ce0;
+    opacity: .95;
+  }
+  .bar:hover {
+    /*fill: #2887c8;*/
+    fill: #22a6b3;
+    opacity: .85;
+  }
+  .x.axis path {
+    display: none;
+  }
+  .d3-tip {
+    line-height: 1;
+    font-weight: bold;
+    padding: 12px;
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    border-radius: 2px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.5);
+    transition: opacity 1s;
+  }
+
+  /* Creates a small triangle extender for the tooltip */
+  .d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 10px;
+    width: 100%;
+    line-height: 1;
+    color: rgba(0, 0, 0, 0.8);
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+  }
+
+  /* Style northward tooltips differently */
+  .d3-tip.n:after {
+    margin: -1px 0 0 0;
+    top: 100%;
+    left: 0;
+  }
