@@ -1,103 +1,68 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Scrolling Sections</title>
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
-  <link rel="stylesheet" type="text/css" href="css/style.css"/>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <!-- <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script> -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presidential Pageviews Visualization</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" type="text/css" href="css/style_v2.css"/>
 </head>
 <body>
+
 <div class="container">
-  <div id='graphic'>
-    <div id='sections'>
-      <section class="step">
-        <div class="title">Learning to scroll</div>
-        I'm learning to be a better data analyst<br/><br/>Part of that is learning to visualize data in an intuitive and interactive way.
-      </section>
-      <section class="step">
-        <div class="title">Scrollytelling</div>     
-        <div class="frame">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/71829/mona-lisa.jpg" alt="Mona Lisa" />
-        </div>   
-        Scrollytelling is such a fun and unique way to interact with data. I've been wanting to learning how to do this for a while but have always lacked the javascript skills. This is my first serious attempt to go from unique data to a well organized scrollstory.
-      </section>
-      <section class="step">
-        <div class="title">George Washington</div>
-        <div class="frame">
-          <img src="images/george_wash.jpg" alt="George Washington" />
-        </div>
-        1st President of the United States, 1789-1797
-      </section>
-      <section class="step">
-        <div class="title">John Adams</div>
-        <div class="frame">
-          <img src="images/john_adams.jpg" alt="John Adams" />
-        </div>
-        2nd President of the United States, 1797-1801
-      </section>
-      <section class="step">
-        <div class="title">Thomas Jefferson</div>
-        <div class="frame">
-          <img src="images/thomas_jefferson.jpg" alt="Thomas Jefferson" />
-        </div>
-        3rd President of the United States, 1801-1809
-      </section>
-      <section class="step">
-        <div class="title">James Madison</div>
-        <div class="frame">
-          <img src="images/james_madison.jpg" alt="James Madison" />
-        </div>
-        4th President of the United States, 1809-1817
-      </section>
-      <section class="step">
-        <div class="title">James Monroe</div>
-        <div class="frame">
-          <img src="images/james_monroe.jpg" alt="James Monroe" />
-        </div>
-        5th President of the United States, 1817-1825
-      </section>
-      <section class="step">
-        <div class="title">John Quincy Adams</div>
-        <div class="frame">
-          <img src="images/john_quincy_adams.jpg" alt="John Quincy Adams" />
-        </div>
-        6th President of the United States, 1825-1829
-      </section>
-      <section class="step">
-        <div class="title">Andrew Jackson</div>
-        <div class="frame">
-          <img src="images/andrew_jackson.jpg" alt="Andrew Jackson" />
-        </div>
-        7th President of the United States, 1829-1837
-      </section>
-      <section class="step">
-        <div class="title">Martin Van Buren</div>
-        <div class="frame">
-          <img src="images/martin_van_buren.jpg" alt="Martin Van Buren" />
-        </div>
-        8th President of the United States, 1837-1841
-      </section>
-      <section class="step">
-        <div class="title">Theodore Roosevelt</div>
-        <div class="frame">
-          <img src="images/theodore_roosevelt.jpg" alt="Theodore Roosevelt" />
-        </div>
-        26th President of the United States, 1901-1909
-      </section>
+    <div id='graphic'>
+        <div id="vis"></div> <!-- Visualization area -->
+        <!-- Sections for each president -->
+        <section class="step" data-president="George Washington">George Washington</section>
+        <section class="step" data-president="John Adams">John Adams</section>
+        <section class="step" data-president="Thomas Jefferson">Thomas Jefferson</section>
+        <section class="step" data-president="James Madison">James Madison</section>
+        <section class="step" data-president="James Monroe">James Monroe</section>
+        <section class="step" data-president="John Quincy Adams">John Quincy Adams</section>
+        <section class="step" data-president="Andrew Jackson">Andrew Jackson</section>
+        <section class="step" data-president="Martin Van Buren">Martin Van Buren</section>
+        <section class="step" data-president="William Henry Harrison">William Henry Harrison</section>
+        <section class="step" data-president="John Tyler">John Tyler</section>
+        <section class="step" data-president="James K. Polk">James K. Polk</section>
+        <section class="step" data-president="Zachary Taylor">Zachary Taylor</section>
+        <section class="step" data-president="Millard Fillmore">Millard Fillmore</section>
+        <section class="step" data-president="Franklin Pierce">Franklin Pierce</section>
+        <section class="step" data-president="James Buchanan">James Buchanan</section>
+        <section class="step" data-president="Abraham Lincoln">Abraham Lincoln</section>
+        <section class="step" data-president="Andrew Johnson">Andrew Johnson</section>
+        <section class="step" data-president="Ulysses S. Grant">Ulysses S. Grant</section>
+        <section class="step" data-president="Rutherford B. Hayes">Rutherford B. Hayes</section>
+        <section class="step" data-president="James A. Garfield">James A. Garfield</section>
+        <section class="step" data-president="Chester A. Arthur">Chester A. Arthur</section>
+        <section class="step" data-president="Grover Cleveland">Grover Cleveland</section>
+        <section class="step" data-president="Benjamin Harrison">Benjamin Harrison</section>
+        <section class="step" data-president="William McKinley">William McKinley</section>
+        <section class="step" data-president="Theodore Roosevelt">Theodore Roosevelt</section>
+        <section class="step" data-president="William Howard Taft">William Howard Taft</section>
+        <section class="step" data-president="Woodrow Wilson">Woodrow Wilson</section>
+        <section class="step" data-president="Warren G. Harding">Warren G. Harding</section>
+        <section class="step" data-president="Calvin Coolidge">Calvin Coolidge</section>
+        <section class="step" data-president="Herbert Hoover">Herbert Hoover</section>
+        <section class="step" data-president="Franklin D. Roosevelt">Franklin D. Roosevelt</section>
+        <section class="step" data-president="Dwight D. Eisenhower">Dwight D. Eisenhower</section>
+        <section class="step" data-president="John F. Kennedy">John F. Kennedy</section>
+        <section class="step" data-president="Lyndon B. Johnson">Lyndon B. Johnson</section>
+        <section class="step" data-president="Richard Nixon">Richard Nixon</section>
+        <section class="step" data-president="Gerald Ford">Gerald Ford</section>
+        <section class="step" data-president="Jimmy Carter">Jimmy Carter</section>
+        <section class="step" data-president="Ronald Reagan">Ronald Reagan</section>
+        <section class="step" data-president="George H. W. Bush">George H. W. Bush</section>
+        <section class="step" data-president="Bill Clinton">Bill Clinton</section>
+        <section class="step" data-president="George W. Bush">George W. Bush</section>
+        <section class="step" data-president="Barack Obama">Barack Obama</section>
+        <section class="step" data-president="Donald Trump">Donald Trump</section>
+        <section class="step" data-president="Joe Biden">Joe Biden</section>
     </div>
-    <div id='vis'>
-    </div>
-    <div id="extra-space">
-    </div>
-  </div>
 </div>
 
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script type="module" src="js/main.js"></script>
 
-<script src="https://d3js.org/d3.v4.min.js"></script>
-<script src="js/scroller.js"></script>
-<!-- <script src="js/sections.js"></script> -->
-<!-- <script src="js/sections_2.js"></script> -->
-<script src="js/sections_3.js"></script>
 </body>
 </html>
