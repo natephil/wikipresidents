@@ -22,3 +22,19 @@ body {
 .bar {
     fill: steelblue;
 }
+.intro {
+  height: 600px; /* or adjust as needed */
+  padding: 40px 20px;
+  background-color: #f0f8ff; /* Light background color */
+  border-bottom: 1px solid #ddd;
+}
+
+.intro h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+}
+
+.intro p {
+  font-size: 1.1em;
+  line-height: 1.6;
+}
