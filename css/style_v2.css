@@ -10,22 +10,21 @@ body {
 }
 #vis {
     position: fixed;
-    top: 50px;
+    top: 60px;
     right: 20px;
     width: 400px;
     height: 400px;
-    border: 1px solid #ccc;
-    background-color: #f9f9f9;
     padding: 10px;
     overflow: hidden;
 }
 .bar {
-    fill: steelblue;
+    fill: #008080;
+    font-weight: bold;
 }
 .intro {
-  height: 600px; /* or adjust as needed */
+  height: 600px;
   padding: 40px 20px;
-  background-color: #f0f8ff; /* Light background color */
+  background-color: #f0f8ff;
   border-bottom: 1px solid #ddd;
 }
 
@@ -37,4 +36,10 @@ body {
 .intro p {
   font-size: 1.1em;
   line-height: 1.6;
+}
+.axis path, /*ensures axes in graph are smooth and crisp*/
+.axis line {
+  fill: none;
+  stroke: #666;
+  shape-rendering: crispEdges;
 }
